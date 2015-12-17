@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+var transformer = require('../lib/transformer');
+
+var newid = require('../lib/newid')(process.argv[2], transformer(process.argv[3]));
