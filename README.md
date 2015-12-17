@@ -1,6 +1,18 @@
 # newid
 Newid is Welsh for 'change', but it is pretty fitting for giving a file a new name, too.
 
+## Installation
+To use the API:
+
+```bash
+npm install newid
+```
+
+To use the CLI and make the command `newid` available on your system:
+```bash
+npm install -g newid
+```
+
 ## Usage
 
 ### API
