@@ -1,11 +1,14 @@
 {
   "name": "newid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility for changing file names",
   "main": "lib/newid.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+	"bin": {
+		"newid": "bin/newid"
+	},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nsand/newid.git"
