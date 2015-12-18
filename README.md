@@ -15,15 +15,23 @@ npm install -g newid
 
 ## Usage
 
+### Supported Options
+* `force` - Renames matching files without being prompted
+
 ### API
 ```javascript
 var newid = require('newid');
 newid('**/*.js', function (file) {
 	// Adds the 'old' extension to all JavaScript files
 	return file + '.old';
-});
+}, {force: true});
 ```
+
 ### CLI
 ```bash
+# Renaming all JS files to end with .old
 newid "**/*.js" {basename}.{extname}.old
+
+# Rename all matching files without being prompted (--force|-f)
+new id "**/*.js" {basename}.{extname}.old --force
 ```
