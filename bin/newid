@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
-var chalk = require('chalk');
+
+var usage = require('../lib/usage');
 
 if (process.argv.length < 4) {
-	console.log('Usage:\n');
-	console.log('\t' + chalk.cyan('newid') + ' <glob pattern> <replacement template>\n');
+	usage();
 	process.exit(1);
 }
-var transformer = require('../lib/transformer');
 
-var newid = require('../lib/newid')(process.argv[2], transformer(process.argv[3]));
+var transformer = require('../lib/transformer'),
+	opts = require('../lib/opts');
+
+var newid = require('../lib/newid')(opts.pattern, transformer(opts.template), opts.flags);
