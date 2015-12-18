@@ -9,6 +9,6 @@ if (process.argv.length < 4) {
 }
 
 var transformer = require('../lib/transformer'),
-	opts = require('../lib/opts');
+	opts = require('../lib/opts')(process.argv.slice(2));
 
-var newid = require('../lib/newid')(opts.pattern, transformer(opts.template), opts.flags);
+require('../lib/newid')(opts.pattern, transformer(opts.template), opts.flags);
