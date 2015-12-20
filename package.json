@@ -1,6 +1,6 @@
 {
   "name": "newid",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A utility for changing file names",
   "main": "lib/newid.js",
   "scripts": {
@@ -22,10 +22,10 @@
   "bugs": {
     "url": "https://github.com/nsand/newid/issues"
   },
-	"files": [
-		"bin",
-		"lib"
-	],
+  "files": [
+    "bin",
+    "lib"
+  ],
   "homepage": "https://github.com/nsand/newid#readme",
   "dependencies": {
     "async": "^1.5.0",
