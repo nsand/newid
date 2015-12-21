@@ -1,7 +1,7 @@
 var tape = require('tape');
 var usage = require('../lib/usage');
 
-tape.test('Make sure there is a usage function', function (assert) {
+tape.test('usage - should be a function function', function (assert) {
 	assert.equal(typeof usage, 'function');
 	assert.end();
 });
