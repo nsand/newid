@@ -1,6 +1,6 @@
 {
   "name": "newid",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A utility for changing file names",
   "main": "lib/newid.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "change",
-		"files",
+    "files",
     "rename"
   ],
   "author": "Nick Sandonato",
