@@ -11,4 +11,10 @@ if (process.argv.length < 4) {
 var transformer = require('../lib/transformer'),
 	opts = require('../lib/opts')(process.argv.slice(2));
 
-require('../lib/newid')(opts.pattern, transformer(opts.template), opts.flags);
+if (opts) {
+	require('../lib/newid')(opts.pattern, transformer(opts.template), opts.flags);
+}
+else {
+	usage();
+	process.exit(1);
+}
