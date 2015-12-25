@@ -8,11 +8,10 @@ if (process.argv.length < 4) {
 	process.exit(1);
 }
 
-var transformer = require('../lib/transformer'),
-	opts = require('../lib/opts')(process.argv.slice(2));
-
+var opts = require('../lib/opts')(process.argv.slice(2));
+var newid = require('../lib/newid');
 if (opts) {
-	require('../lib/newid')(opts.pattern, transformer(opts.template), opts.flags);
+	newid(opts.pattern, newid.transformer(opts.template), opts.flags);
 }
 else {
 	usage();
