@@ -29,9 +29,9 @@ newid('**/*.js', function (file) {
 
 ### CLI
 ```bash
-# Renaming all JS files to end with .old
+# Rename all JS files to end with .old
 newid "**/*.js" {basename}.{extname}.old
 
 # Rename all matching files without being prompted (--force|-f)
-new id "**/*.js" {basename}.{extname}.old --force
+newid "**/*.js" {basename}.{extname}.old --force
 ```
