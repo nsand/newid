@@ -16,9 +16,21 @@ tape.test('opts - should support the force option', function (assert) {
 	assert.end();
 });
 
+tape.test('opts - should support the insensitive option', function (assert) {
+	var options = opts(['--insensitive', 'glob', 'template']);
+	assert.equal(options.flags.insensitive, true);
+	assert.end();
+});
+
 tape.test('opts - should support shorthand notation', function (assert) {
 	var options = opts(['-f', 'glob', 'template']);
 	assert.equal(options.flags.force, true);
+	assert.end();
+});
+
+tape.test('opts - should support shorthand insensitive notation', function (assert) {
+	var options = opts(['-i', 'glob', 'template']);
+	assert.equal(options.flags.insensitive, true);
 	assert.end();
 });
 
