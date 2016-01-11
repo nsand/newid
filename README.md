@@ -17,6 +17,7 @@ npm install -g newid
 
 ### Supported Options
 * `force` - Renames matching files without being prompted
+* `insensitive` - Ignore case when finding matching files
 
 ### API
 ```javascript
@@ -34,4 +35,7 @@ newid "**/*.js" {basename}.{extname}.old
 
 # Rename all matching files without being prompted (--force|-f)
 newid "**/*.js" {basename}.{extname}.old --force
+
+# Rename all matching files regardless of case (--insensitive|-i)
+newid "**/*.js" {basename}.{extname}.old --insensitive
 ```
