@@ -18,6 +18,7 @@ npm install -g newid
 ### Supported Options
 * `force` - Renames matching files without being prompted
 * `insensitive` - Ignore case when finding matching files
+* `help` - Display usage help and immediately exit
 
 ### API
 ```javascript
