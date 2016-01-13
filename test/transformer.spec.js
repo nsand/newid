@@ -27,3 +27,9 @@ tape.test('transformer - should modify the filename based on the template', func
 	assert.equals(transformer('path/to/file.txt'), 'path/to/different.name');
 	assert.end();
 });
+
+tape.test('transformer - should replace the {index} parameter', function (assert) {
+	var transformer = require('../lib/transformer')('{index}.foo');
+	assert.equals(transformer('path/to/file.txt', 100), 'path/to/100.foo');
+	assert.end();
+});
