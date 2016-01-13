@@ -39,4 +39,7 @@ newid "**/*.js" {basename}.{extname}.old --force
 
 # Rename all matching files regardless of case (--insensitive|-i)
 newid "**/*.js" {basename}.{extname}.old --insensitive
+
+# Rename all matching files and inject their index into the new name using the {index} placeholder
+newid "**/*.js" {basename}-{index}.{extname} --insensitive
 ```
