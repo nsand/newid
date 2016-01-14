@@ -29,10 +29,19 @@ newid('**/*.js', function (file) {
 }, {force: true});
 ```
 
+```javascript
+// Using the included transformer that parses placeholders: {basename}, {extname}, and {index}
+var newid = require('newid');
+newid('**/*.js', newid.transformer('{index}.{extname}'));
+```
+
 ### CLI
 ```bash
 # Rename all JS files to end with .old
 newid "**/*.js" {basename}.{extname}.old
+
+# Rename all matching files and inject their index into the new name using the {index} placeholder
+newid "**/*.js" {basename}-{index}.{extname}
 
 # Rename all matching files without being prompted (--force|-f)
 newid "**/*.js" {basename}.{extname}.old --force
@@ -40,6 +49,4 @@ newid "**/*.js" {basename}.{extname}.old --force
 # Rename all matching files regardless of case (--insensitive|-i)
 newid "**/*.js" {basename}.{extname}.old --insensitive
 
-# Rename all matching files and inject their index into the new name using the {index} placeholder
-newid "**/*.js" {basename}-{index}.{extname} --insensitive
 ```
