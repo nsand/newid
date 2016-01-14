@@ -1,6 +1,6 @@
 {
   "name": "newid",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A utility for changing file names",
   "main": "lib/newid.js",
   "scripts": {
