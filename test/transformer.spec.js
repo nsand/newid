@@ -33,3 +33,9 @@ tape.test('transformer - should replace the {index} parameter', function (assert
 	assert.equals(transformer('path/to/file.txt', 100), 'path/to/100.foo');
 	assert.end();
 });
+
+tape.test('transformer - should not replace unknown parameters', function (assert) {
+	var transformer = require('../lib/transformer')('{basename}{foo}.{bar}');
+	assert.equals(transformer('path/to/file.txt'), 'path/to/file{foo}.{bar}');
+	assert.end();
+});
