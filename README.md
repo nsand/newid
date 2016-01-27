@@ -20,6 +20,18 @@ npm install -g newid
 * `insensitive` - Ignore case when finding matching files
 * `help` - Display usage help and immediately exit
 
+### Supported placeholders
+* `{basename}` - The basename of the file
+* `{extname}` - The file extension *excluding* the `.`
+* `{index}` - The index the file will be processed in
+
+### Supported placeholders - Timestamps
+All file timestamps can be formatted using valid [Moment.js Formats](http://momentjs.com/docs/#/displaying/format/). Use the `|` to separate the timestamp type from the format string. As an example, `{atime | YYYY-MM-DD}`
+* `{atime}` - The time at which the file was last accessed
+* `{ctime}` - The time at which the file was last changed, this can include file permission changes in addition to content changes.
+* `{mtime}` - Time time at which the file's contents were last modified
+* `{birthtime}` - The time at which the file was created
+
 ### API
 ```javascript
 var newid = require('newid');
@@ -42,6 +54,9 @@ newid "**/*.js" {basename}.{extname}.old
 
 # Rename all matching files and inject their index into the new name using the {index} placeholder
 newid "**/*.js" {basename}-{index}.{extname}
+
+# Rename all matching files to include its modification time, formatted as YYYY-MM-DD
+newid "**/*.js" {basename}-{mtime | YYYY-MM-DD}.{extname}
 
 # Rename all matching files without being prompted (--force|-f)
 newid "**/*.js" {basename}.{extname}.old --force
