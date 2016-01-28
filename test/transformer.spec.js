@@ -39,3 +39,41 @@ tape.test('transformer - should not replace unknown parameters', function (asser
 	assert.equals(transformer('path/to/file.txt'), 'path/to/file{foo}.{bar}');
 	assert.end();
 });
+
+var timeRx = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}/;
+
+tape.test('transformer - should replace atime placeholder', function (assert) {
+	var transformer = require('../lib/transformer')('{atime}');
+	assert.ok(timeRx.test(transformer('package.json')));
+	assert.end();
+});
+
+tape.test('transformer - should replace ctime placeholder', function (assert) {
+	var transformer = require('../lib/transformer')('{ctime}');
+	assert.ok(timeRx.test(transformer('package.json')));
+	assert.end();
+});
+
+tape.test('transformer - should replace mtime placeholder', function (assert) {
+	var transformer = require('../lib/transformer')('{mtime}');
+	assert.ok(timeRx.test(transformer('package.json')));
+	assert.end();
+});
+
+tape.test('transformer - should replace birthtime placeholder', function (assert) {
+	var transformer = require('../lib/transformer')('{birthtime}');
+	assert.ok(timeRx.test(transformer('package.json')));
+	assert.end();
+});
+
+tape.test('transformer - should format time placeholders', function (assert) {
+	var transformer = require('../lib/transformer')('{atime | YYYY}');
+	assert.ok(/\d{4}/.test(transformer('package.json')));
+
+	transformer = require('../lib/transformer')('{atime|YYYY}');
+	assert.ok(/\d{4}/.test(transformer('package.json')));
+
+	transformer = require('../lib/transformer')('{atime | YYYY-[foobar]}');
+	assert.ok(/\d{4}-foobar/.test(transformer('package.json')));
+	assert.end();
+});
