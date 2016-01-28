@@ -21,7 +21,7 @@ npm install -g newid
 * `help` - Display usage help and immediately exit
 
 ### Supported placeholders
-* `{basename}` - The basename of the file
+* `{basename}` - The base name of the file
 * `{extname}` - The file extension *excluding* the `.`
 * `{index}` - The index the file will be processed in
 
