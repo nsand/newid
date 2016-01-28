@@ -5,7 +5,7 @@ Newid is Welsh for 'change', but it is pretty fitting for giving a file a new na
 To use the API:
 
 ```bash
-npm install newid
+npm install --save newid
 ```
 
 To use the CLI and make the command `newid` available on your system:
