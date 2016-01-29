@@ -15,6 +15,8 @@ npm install -g newid
 
 ## Usage
 
+If there are any changes to be made, you'll get a list of the before and after. You'll have to confirm that you want to make all of the changes, unless you use the `force` flag.
+
 ### Supported Options
 * `force` - Renames matching files without being prompted
 * `insensitive` - Ignore case when finding matching files
@@ -33,6 +35,7 @@ All file timestamps can be formatted using valid [Moment.js Formats](http://mome
 * `{birthtime}` - The time at which the file was created
 
 ### API
+
 ```javascript
 var newid = require('newid');
 newid('**/*.js', function (file) {
@@ -48,6 +51,7 @@ newid('**/*.js', newid.transformer('{index}.{extname}'));
 ```
 
 ### CLI
+
 ```bash
 # Rename all JS files to end with .old
 newid "**/*.js" {basename}.{extname}.old
