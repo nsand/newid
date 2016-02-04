@@ -46,6 +46,18 @@ tape.test('opts - should support shorthand help notation', function (assert) {
 	assert.end();
 });
 
+tape.test('opts - should support the slugify option', function (assert) {
+	var options = opts(['--slugify', 'glob', 'template']);
+	assert.equal(options.flags.slugify, true);
+	assert.end();
+});
+
+tape.test('opts - should support the slugify shorthand', function (assert) {
+	var options = opts(['-s', 'glob', 'template']);
+	assert.equal(options.flags.slugify, true);
+	assert.end();
+});
+
 tape.test('opts - should terminate parsing with invalid flags', function (assert) {
 	var options = opts(['glob', 'template', '--nothing']);
 	assert.equals(typeof options, 'undefined');
