@@ -21,6 +21,7 @@ If there are any changes to be made, you'll get a list of the before and after. 
 * `force` - Renames matching files without being prompted
 * `insensitive` - Ignore case when finding matching files
 * `help` - Display usage help and immediately exit
+* `slugify` - Slugifies the file name, converting it to lowercase, replacing all non-English characters, and collapsing whitespace and separators into a single dash. (e.g., `this filè_010.jpg` => `this-file-010.jpg`)
 
 ### Supported placeholders
 * `{basename}` - The base name of the file
@@ -68,4 +69,6 @@ newid "**/*.js" {basename}.{extname}.old --force
 # Rename all matching files regardless of case (--insensitive|-i)
 newid "**/*.js" {basename}.{extname}.old --insensitive
 
+# Rename all matching files, converting them into slugs (--slugify|-s)
+newid "**/*.js" "{basename} {extname}.old" --slugify
 ```
